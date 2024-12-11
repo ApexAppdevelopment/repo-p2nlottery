@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Betting History - Panyero F2N</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/buttons.css">
+    <style>
+        .history-container {
+            padding: 1rem;
+        }
+        
+        .bet-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 1rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .bet-card p {
+            margin: 0.5rem 0;
+        }
+        
+        .back-button {
+            margin: 1rem 0;
+        }
+        
+        .no-bets {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Betting History</h1>
+        </header>
+        
+        <button onclick="window.location.href='index.html'" class="btn-secondary back-button">
+            Back to Betting
+        </button>
+        
+        <div class="history-container" id="historyContainer">
+            <!-- Betting history will be loaded here -->
+            <div class="no-bets">
+                <p>No betting history available</p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/history.js"></script>
+</body>
+</html>

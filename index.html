@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panyero F2N Betting</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/buttons.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>PCSO Lottery Results</h1>
+            <div class="balance-display">
+                <strong>Balance:</strong> 
+                <span id="agentBalance">₱10,000</span>
+            </div>
+        </header>
+
+        <section class="draw-selection">
+            <label for="drawType">Select Draw Type</label>
+            <select id="drawType" class="form-control">
+                <option value="6/58">Ultra Lotto 6/58</option>
+                <option value="6/55">Grand Lotto 6/55</option>
+                <option value="6/49">Super Lotto 6/49</option>
+                <option value="6/45">Mega Lotto 6/45</option>
+                <option value="6/42">Lotto 6/42</option>
+                <option value="6/59">Hyper Lotto 6/59</option>
+            </select>
+        </section>
+
+        <section class="prize-info">
+            <div class="info-card">
+                <h3>Prize Details</h3>
+                <p><strong>Pool:</strong> <span id="prizePool">₱76,411,637</span></p>
+                <p><strong>Next Jackpot:</strong> <span id="nextJackpot">₱451,019,347</span></p>
+            </div>
+        </section>
+
+        <section class="latest-results">
+            <div class="info-card">
+                <h3>Latest Results</h3>
+                <p><strong>Numbers:</strong> <span id="latestNumbers">05, 12, 23, 34, 45, 56</span></p>
+                <p><strong>Prize Pool:</strong> <span id="latestPrizePool">₱76,411,637</span></p>
+                <p><strong>Winners:</strong> <span id="latestWinners">150</span></p>
+            </div>
+        </section>
+
+        <section class="betting-form">
+            <h2>Place Your Bet</h2>
+            <div class="form-group">
+                <label for="bettorName">Bettor's Name</label>
+                <input type="text" id="bettorName" class="form-control" placeholder="Enter Bettor's Name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="betAmount">Bet Amount (₱)</label>
+                <input type="number" id="betAmount" class="form-control" placeholder="Enter Bet Amount" required>
+                <p class="error" id="balanceError"></p>
+            </div>
+
+            <div class="form-group">
+                <label>Select Two Numbers</label>
+                <div class="number-selection"></div>
+                <p class="error" id="numberSelectionError"></p>
+            </div>
+
+            <input type="hidden" id="payoutRatio" value="900">
+
+            <div class="expected-win">
+                <p><strong>Expected Win:</strong> <span id="expectedWin">₱0</span></p>
+            </div>
+
+            <button id="placeBetButton" class="btn-primary" disabled>Place Bet</button>
+        </section>
+
+        <section class="history-section">
+            <button onclick="window.location.href='bet-history.html'" class="btn-secondary">
+                View Betting History
+            </button>
+        </section>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div id="confirmationModal" class="modal">
+        <div class="modal-content">
+            <h2>Confirm Your Bet</h2>
+            <div class="modal-body">
+                <p><strong>Agent ID:</strong> <span id="agentIDConfirm"></span></p>
+                <p><strong>Bettor:</strong> <span id="bettorNameConfirm"></span></p>
+                <p><strong>Numbers:</strong> <span id="selectedNumbersConfirm"></span></p>
+                <p><strong>Amount:</strong> ₱<span id="betAmountConfirm"></span></p>
+                <p><strong>Draw:</strong> <span id="drawTypeConfirm"></span></p>
+                <p><strong>Time:</strong> <span id="drawTimeConfirm"></span></p>
+                <p><strong>Expected Win:</strong> ₱<span id="expectedWinConfirm"></span></p>
+            </div>
+            <div class="modal-footer">
+                <button onclick="confirmBet()" class="btn-success">Confirm</button>
+                <button onclick="closeModal()" class="btn-danger">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Receipt Modal -->
+    <div id="receipt" class="modal"></div>
+
+    <!-- Overlay -->
+    <div id="overlay"></div>
+
+    <script src="https://cdn.jsdelivr.net/jsbarcode/3.11.5/JsBarcode.all.min.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/drawData.js"></script>
+    <script src="js/validation.js"></script>
+    <script src="js/betting.js"></script>
+    <script src="js/ui.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+/* Fund Status Styles */
+.fund-status {
+    margin-bottom: 1.5rem;
+    border-left: 4px solid transparent;
+}
+
+.fund-status .health-status {
+    font-weight: bold;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+}
+
+/* Status Colors */
+.status-excellent {
+    border-left-color: #28a745;
+}
+
+.status-good {
+    border-left-color: #17a2b8;
+}
+
+.status-moderate {
+    border-left-color: #ffc107;
+}
+
+.status-caution {
+    border-left-color: #fd7e14;
+}
+
+.status-critical {
+    border-left-color: #dc3545;
+}
+
+/* Health Status Labels */
+.status-excellent .health-status {
+    background-color: #28a745;
+    color: white;
+}
+
+.status-good .health-status {
+    background-color: #17a2b8;
+    color: white;
+}
+
+.status-moderate .health-status {
+    background-color: #ffc107;
+    color: black;
+}
+
+.status-caution .health-status {
+    background-color: #fd7e14;
+    color: white;
+}
+
+.status-critical .health-status {
+    background-color: #dc3545;
+    color: white;
+}
